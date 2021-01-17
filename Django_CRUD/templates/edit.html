@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+
+
+<div class="small_div">
+
+<div class="container">
+    <br>
+    <h2>Parcel List</h2>
+    <hr>
+
+    <form action="/update/{{ parcels.id }}">
+
+        {% csrf_token %}
+
+        <label class="form-group" for="tracking_no">Tracking No: </label>
+        <input class="form-control" type="text" name="tracking_no" value="{{ parcels.tracking_no }}" placeholder="{{ parcels.tracking_no }}">
+
+        <label class="form-group" for="postcode">Postcode: </label>
+        <input class="form-control" type="text" name="postcode" value="{{ parcels.postcode }}" placeholder="{{ parcels.postcode }}">
+
+        <label class="form-group" for="address">Address: </label>
+        <input class="form-control" type="text" name="address" value="{{ parcels.address }}" placeholder="{{ parcels.address }}">
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="Update">
+
+    </form>
+
+
+</div>
+</div>
+
+{% endblock content%}

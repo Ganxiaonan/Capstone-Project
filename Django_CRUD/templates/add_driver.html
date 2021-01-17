@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="small_div">
+
+<div class="container">
+    <br>
+    <h2>ADD DRIVER</h2>
+    <hr>
+
+    <form action="/create_driver">
+
+            {%  csrf_token %}
+
+            <label class="form-group" for="zone">ZONE: </label>
+            <input class="form-control" type="text" name="zone"><br>
+
+            <label class="form-group" for="min_postcode">MIN_POSTCODE: </label>
+            <input class="form-control" type="text" name="min_postcode"><br>
+
+            <label class="form-group" for="max_postcode">MAX_POSTCODE: </label>
+            <input class="form-control" type="text" name="max_postcode"><br>
+
+            <label class="form-group" for="compartment">COMPARTMENT: </label>
+            <input class="form-control" type="text" name="compartment"><br>
+
+            <input class="btn btn-success" type="submit" value="CREATE">
+
+
+        </form>
+        <br>
+
+
+</div>
+</div>
+
+{% endblock content%}

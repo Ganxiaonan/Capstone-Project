@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="Submit" name="submit" value="Submit"/>
+    </form>
+    {% if submitbutton == "Submit" %}
+    <br>
+    <hr>
+    <table class="table table-dark">
+      <h4> DETAILS OF PARCEL {{ tracking_no }}</h4>
+      <hr>
+      <h5>COMPARTMENT: {{compartment_answer}}</h5>
+      <h5>DESTINATION: {{destination_answer}}</h5>
+      <h5>POSTCODE: {{postcode}}</h5>
+      <h5>ADDRESS: {{address}}</h5>
+    </table>
+
+
+    {% endif %}
+  <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+</div>
+{% endblock content%}

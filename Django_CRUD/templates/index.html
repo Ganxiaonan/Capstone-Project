@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+<div class="container"><br>
+    <h2>Parcel Entry</h2>
+    <hr>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>TRACKING NO</th>
+                <th>POSTCODE</th>
+                <th>ADDRESS</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for parcel in parcels %}
+
+                <tr>
+                <td>{{ parcel.tracking_no }}</td>
+                <td>{{ parcel.postcode }}</td>
+                <td>{{ parcel.address }}</td>
+                <td><a class="btn btn-info" href="/edit/{{ parcel.id }}">Edit</a>
+                    <a class="btn btn-danger" href="/delete/{{ parcel.id }}">Delete</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/add_parcel/">ADD PARCEL</a>
+</div>
+{% endblock content%}

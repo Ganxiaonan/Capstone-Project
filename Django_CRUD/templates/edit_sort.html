@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+
+
+<div class="small_div">
+
+<div class="container">
+    <br>
+    <h2>LIST OF PICK UP POINT</h2>
+    <hr>
+
+    <form action="/update/{{ drivers.id }}">
+
+        {% csrf_token %}
+
+        <label class="form-group" for="name">ZONE: </label>
+        <input class="form-control" type="text" name="zone" value="{{ drivers.zone }}" placeholder="{{ drivers.zone }}">
+
+        <label class="form-group" for="min_postcode">MIN_POSTCODE: </label>
+        <input class="form-control" type="text" name="min_postcode" value="{{ drivers.min_postcode }}" placeholder="{{ drivers.min_postcode }}">
+
+        <label class="form-group" for="max_postcode">MAX_POSTCODE: </label>
+        <input class="form-control" type="text" name="max_postcode" value="{{ drivers.max_postcode }}" placeholder="{{ drivers.max_postcode }}">
+        <br>
+
+        <input class="btn btn-primary" type="submit" value="UPDATE">
+
+    </form>
+
+
+</div>
+</div>
+
+{% endblock content%}

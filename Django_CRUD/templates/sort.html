@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+<div class="container"><br>
+    <h2>Parcel Sorting</h2>
+    <hr>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>TRACKING NO</th>
+                <th>COMPARTMENT</th>
+                <th>DESTINATION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for parcel in parcels %}
+
+                <tr>
+                <td>{{ parcel.tracking_no }}</td>
+                <td>{{ parcel.compartment }}</td>
+                <td>{{ parcel.destination }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock content%}

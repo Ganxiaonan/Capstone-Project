@@ -1,0 +1,4 @@
+django
+pytz
+numpy
+django-crispy-forms

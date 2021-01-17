@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content%}
+<div class="container"><br>
+    <h2>DHL PICK UP POINT</h2>
+    <hr>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ZONE</th>
+                <th>MIN_POSTCODE</th>
+                <th>MAX_POSTCODE</th>
+                <th>COMPARTMENT</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in drivers %}
+
+                <tr>
+                <td>{{ driver.zone }}</td>
+                <td>{{ driver.min_postcode }}</td>
+                <td>{{ driver.max_postcode }}</td>
+                <td>{{ driver.compartment }}</td>
+                <td><a class="btn btn-info" href="/edit_driver/{{ driver.id }}">Edit</a>
+                    <a class="btn btn-danger" href="/delete_driver/{{ driver.id }}">Delete</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/add_driver/">ADD ZONE</a>
+</div>
+{% endblock content%}
